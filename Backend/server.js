@@ -1,3 +1,5 @@
+import "dotenv/config";
+
 import express from "express";
 import { neon } from '@neondatabase/serverless';
 
@@ -7,10 +9,9 @@ import workoutRoutes from "./routes/workouts.js";
 import progressRoutes from "./routes/progress.js";
 import authRoutes from "./routes/auth.js";
 
-const DATABASE_URL = 'postgresql://neondb_owner:npg_S4dNvaFlC9Pf@ep-mute-fog-atll64p0-pooler.c-9.us-east-1.aws.neon.tech/neondb?sslmode=require&channel_binding=require'
 
 const app = express();
-const sql = neon(DATABASE_URL);
+const sql = neon(process.env.DATABASE_URL);
 
 const PORT = 3000;
 
