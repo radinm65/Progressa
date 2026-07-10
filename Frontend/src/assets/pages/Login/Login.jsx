@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import CircularIndeterminate from "../../components/circular loading/circularLoading.jsx";
 
 import "./Login.css";
-import progressaLogo from "../../imgs & svgs/logo.png";
+import progressaLogo from "../../imgs/logo.png";
 import { validateLogin } from "../../api/login&signin.js";
 
 export function Login() {
@@ -33,7 +33,7 @@ export function Login() {
       return;
     }
 
-    navigate("/Dashboard");
+    navigate(`/${username}/dashboard`);
   }
 
   return (

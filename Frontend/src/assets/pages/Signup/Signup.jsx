@@ -1,5 +1,5 @@
 import "./Signup.css";
-import progressaLogo from "../../imgs & svgs/logo.png";
+import progressaLogo from "../../imgs/logo.png";
 import { useNavigate } from "react-router-dom";
 import {Link} from 'react-router-dom'
 

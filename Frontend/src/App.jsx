@@ -1,6 +1,6 @@
 // import { useState } from 'react'
 import { Outlet } from "react-router-dom";
-import progressaLogo from './assets/imgs & svgs/logo.png'
+import progressaLogo from './assets/imgs/logo.png'
 import {Sidebar} from "./assets/components/Sidebar/Sidebar.jsx";
 import './App.css'
 
