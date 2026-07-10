@@ -1,9 +1,10 @@
 :root {
-    --bg-primary: #e8edf2;
+    --bg-primary: #f1f4f8;
 
-    --surface: #e8edf2;
+    --surface: #f8fafc;
 
     --primary: #45c486;
+    --primary-hover: #5ee3a3;
 
     --primary-dark: #36a86f;
 
@@ -14,19 +15,20 @@
 
     --text-light: #9ca3af;
 
+    --border: 1px solid #45c486;
 
     --danger: #ef4444;
 
     /* Neumorphism Shadows */
 
     --shadow-light:
-        -6px -6px 12px rgba(255, 255, 255, 0.8);
+        -4px -4px 10px rgba(255, 255, 255, 0.7);
 
     --shadow-dark:
-        6px 6px 12px rgba(163, 177, 198, 0.6);
+        4px 4px 10px rgba(163, 177, 198, 0.35);
 
 
-    --neumorphic-shadow:
+    --neo-shadow:
         var(--shadow-light),
         var(--shadow-dark);
 
@@ -45,7 +47,7 @@ body,
 #root {
     width: 100%;
     min-height: 100vh;
-
+    
 }
 
 #root {
@@ -53,6 +55,7 @@ body,
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    background-color: var(--bg-primary);
 }
 
 

@@ -6,7 +6,8 @@ import {Foods} from './assets/pages/Foods/Foods.jsx'
 import {Workouts} from './assets/pages/Workouts/Workouts.jsx'
 import {Progress} from './assets/pages/Progress/Progress.jsx'
 import {Profile} from './assets/pages/Profile/Profile.jsx'
-import {Settings} from './assets/pages/Settings/Settings.jsx'
+import { Settings } from './assets/pages/Settings/Settings.jsx'
+import { Signup } from "./assets/pages/Signup/Signup.jsx";
 import App from "./App.jsx";
 import { createRoot } from "react-dom/client";
 import "./main.css";
@@ -17,6 +18,10 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <Login />
+  },
+  {
+    path: "/Signup",
+    element: <Signup />
   },
 
   {
