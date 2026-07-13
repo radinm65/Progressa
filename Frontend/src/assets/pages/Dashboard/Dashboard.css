@@ -1,0 +1,84 @@
+.dashboard-div {
+    width: 100%;
+    height: calc(100vh - 60px);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 20px;
+}
+
+
+.dashboard-content {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+
+.main-data {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+
+.loading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.meals-div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    min-height: 125px;
+    border-radius: 20px;
+    box-shadow: var(--neo-shadow);
+    padding: 25px;
+    gap: 20px;
+}
+
+.meals-div h3{
+    width: 100%;
+    text-align: start;
+}
+
+.meal-card{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 20px;
+    padding: 20px 10px;
+    border-radius: 15px;
+    box-shadow: var(--neo-shadow);
+    align-items: center;
+}
+
+.meal-card img{
+    width: 50px;
+    height: 50px;
+    border-radius: 5px;
+    object-fit: cover;
+}
+
+.meals-div a {
+    text-decoration: none;
+    color: var(--primary);
+    padding: 5px 8px 8px 10px;
+    border-radius: 10px;
+    transition: background-color .3s;
+}
+
+.meals-div a:hover{
+    background-color: #45c4873e;
+
+}

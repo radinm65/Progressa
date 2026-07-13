@@ -45,7 +45,7 @@ export function Sidebar() {
     <>
       <div className="sidebar-div">
         <div className="content">
-          <div className="head">
+          <div className="sidebar-head">
             <img src={progressaLogo} alt="" />
             <h3>Progressa</h3>
           </div>
@@ -62,7 +62,7 @@ export function Sidebar() {
             <p>Foods</p>
           </NavLink>
           <NavLink to={`/${username}/workouts`} className="pages">
-            <WorkoutsIcon className="sidebar-icon" />
+            <WorkoutsIcon className="sidebar-icon" pathClass="icon-path" />
             <p>Workouts</p>
           </NavLink>
           <NavLink to={`/${username}/progress`} className="pages">

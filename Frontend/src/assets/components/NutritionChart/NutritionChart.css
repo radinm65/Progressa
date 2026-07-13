@@ -1,0 +1,112 @@
+.nutrition-chart {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-end;
+    gap: 65px;
+    width: 100%;
+    height: 250px;
+    padding: 20px;
+    border-radius: 20px;
+    background: var(--surface);
+    box-shadow: var(--neo-shadow);
+}
+
+.donut-chart {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    width: 100%;
+}
+
+.nutrition-chart h3 {
+    margin-bottom: 10px;
+}
+
+.legend-div {
+    width: 100%;
+}
+
+
+.legend {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+
+.legend div {
+    width: 90%;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    color: var(--text-secondary);
+}
+
+
+.legend span {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+}
+
+
+.calories {
+    background: #45c486;
+}
+
+
+.protein {
+    background: #fd2a2a
+}
+
+
+.fat {
+    background: #f59e0b;
+}
+
+.carbs {
+    background: #60a5fa;
+}
+
+.nut-text {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.link-div {
+    width: 90%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+
+}
+
+.link-div a {
+    text-decoration: none;
+    color: var(--primary);
+    padding: 5px 8px 8px 10px;
+    border-radius: 10px;
+    transition: background-color .3s;
+}
+
+.link-div a:hover{
+    background-color: #45c4873e;
+
+}
+
+.nav-wrapper{
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}

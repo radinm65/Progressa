@@ -1,0 +1,149 @@
+.dashboard-head {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 30px;
+}
+
+.dashboard-head h1 {
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+.dashboard-head h2 {
+    font-size: 20px;
+}
+
+.dashboard-head h3 {
+    font-size: 16px;
+    color: var(--text-light);
+}
+
+.head-data-div {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+
+.date-div{
+    width: 200px;
+    padding: 10px;
+}
+
+.date-div, .dropdown-div {
+    height: 50px;
+    border-radius: 15px;
+    box-shadow: var(--neo-shadow);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.dropdown-div{
+    padding: 20px;
+}
+
+
+
+/* ------------------------------------------- */
+/* dropdown */
+
+.profile-dropdown {
+    position: relative;
+}
+
+
+.profile-trigger {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+}
+
+
+.profile-picture {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+
+.arrow {
+    font-size: 12px;
+    transition: .3s;
+}
+
+
+.arrow.rotate {
+    transform: rotate(180deg);
+}
+
+
+
+.dropdown-menu {
+    position: absolute;
+    right: -20px;
+    top: 60px;
+
+    width: 160px;
+
+    background: var(--surface);
+    border-radius: 15px;
+
+    padding: 10px;
+
+    box-shadow: var(--neo-shadow);
+
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+
+
+.dropdown-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    padding: 10px;
+    border-radius: 10px;
+
+    cursor: pointer;
+
+    color: var(--text-secondary);
+
+    text-decoration: none;
+    transition: .2s;
+}
+
+
+.dropdown-item:hover {
+    background: #37e99333;
+    color: #45c486;
+}
+
+.dropdown-item:hover p {
+    color: #45c486;
+}
+
+
+.dropdown-icon {
+    width: 20px;
+    height: 20px;
+}
+
+
+.dropdown-logout:hover {
+    background: rgb(254, 210, 210);
+    color: rgb(255, 90, 90);
+}
+
+.dropdown-logout:hover p {
+    color: rgb(255, 90, 90);
+}

@@ -2,11 +2,12 @@ import "dotenv/config";
 
 import express from "express";
 
-// import foodRoutes from "./routes/foods.js";
+import foodRoutes from "./routes/foods.js";
 // import mealRoutes from "./routes/meals.js";
 // import workoutRoutes from "./routes/workouts.js";
 // import progressRoutes from "./routes/progress.js";
 import authRoutes from "./routes/auth.js";
+import userRoutes from "./routes/users.js";
 
 
 const app = express();
@@ -45,7 +46,9 @@ app.use((req, res, next) => {
 
 app.use("/auth", authRoutes);
 
-// app.use("/foods", foodRoutes);
+app.use("/users", userRoutes)
+
+app.use("/foods", foodRoutes);
 
 // app.use("/meals", mealRoutes);
 

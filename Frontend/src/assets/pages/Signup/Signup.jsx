@@ -5,7 +5,7 @@ import {Link} from 'react-router-dom'
 
 import { useState } from "react";
 import { signup } from "../../api/login&signin";
-import CircularIndeterminate from "../../components/circular loading/circularLoading.jsx";
+import CircularIndeterminate from "../../components/CircularLoading/circularLoading.jsx";
 
 export function Signup() {
   const [name, setName] = useState("");
@@ -59,7 +59,7 @@ export function Signup() {
   return (
     <>
       <form className="signup-form" onSubmit={handleSubmit}>
-        <div className="head">
+        <div className="signup-head">
           <img src={progressaLogo} alt="progressa-logo" />
           <div>
             <h1>Signup</h1>
@@ -178,10 +178,10 @@ export function Signup() {
             </p>
           </div>
           <div className="buttons-div">
+            <button type="reset">Reset</button>
             <button type="submit">
               {showLoading ? <CircularIndeterminate /> : "Create Account"}
             </button>
-            <button type="reset">Reset</button>
           </div>
         </div>
       </form>

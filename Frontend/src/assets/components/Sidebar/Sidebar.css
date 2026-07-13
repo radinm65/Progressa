@@ -1,5 +1,5 @@
 .sidebar-div {
-    width: 20%;
+    width: 17%;
     height: 90%;
     position: fixed;
     top: 5%;
@@ -11,7 +11,6 @@
     border-radius: 20px;
     box-shadow: var(--neo-shadow);
     padding: 20px;
-    ;
 }
 
 .pages p,
@@ -33,7 +32,7 @@
     gap: 10px;
 }
 
-.head {
+.sidebar-head {
     width: 100%;
     display: flex;
     flex-direction: row;
@@ -41,11 +40,12 @@
     align-items: center;
     gap: 15px;
     margin-bottom: 20px;
+    padding: 5px;
 }
 
-.head img {
-    width: 50px;
-    height: 50px;
+.sidebar-head img {
+    width: 35px;
+    height: 35px;
 }
 
 .pages,
@@ -82,7 +82,6 @@
 .pages.active .icon-path {
     color: #45c486;
     stroke: #45c486;
-    fill: #45c486;
 }
 
 

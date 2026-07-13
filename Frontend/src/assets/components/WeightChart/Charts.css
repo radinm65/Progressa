@@ -1,0 +1,20 @@
+.chart-container{
+
+    width:100%;
+    height:100%;
+    padding:25px;
+    border-radius:20px;
+
+    background:var(--surface);
+
+    box-shadow:var(--neo-shadow);
+
+}
+
+
+.chart-container h3{
+
+    color:var(--text-primary);
+    margin-bottom:25px;
+
+}
