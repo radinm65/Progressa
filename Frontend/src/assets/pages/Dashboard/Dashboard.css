@@ -44,7 +44,7 @@
     border-radius: 20px;
     box-shadow: var(--neo-shadow);
     padding: 25px;
-    gap: 20px;
+    gap: 10px;
 }
 
 .meals-div h3{

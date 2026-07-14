@@ -5,7 +5,7 @@ import { WorkoutsIcon } from "../../components/svg components/WorkoutsIcon";
 
 import "./nutrition-stats.css";
 
-export function NutritionStats({ userNutrients, userweights, user }) {
+export function NutritionStats({ userNutrients, userWeights, user }) {
   return (
     <>
       <div className="stats">
@@ -37,7 +37,7 @@ export function NutritionStats({ userNutrients, userweights, user }) {
             Weight
           </div>
           <p className="text-current">
-            {userweights[userweights.length - 1]?.weight}
+            {userWeights[userWeights.length - 1]?.weight}
             <span className="text-desired">/ {user.desired_weight} Kg</span>
           </p>
           <progress value="70" max="100"></progress>

@@ -37,7 +37,7 @@ export function NutritionChart({ data, details, user }) {
             <span className="calories"></span>
             <div className="nut-text">
               <p>Calories</p>
-              <p>{details.total_calories}</p>
+              <p>{details.total_calories} kcal</p>
             </div>
           </div>
 
@@ -45,7 +45,7 @@ export function NutritionChart({ data, details, user }) {
             <span className="protein"></span>
             <div className="nut-text">
               <p>Protein</p>
-              <p>{details.total_protein}</p>
+              <p>{details.total_protein} g</p>
             </div>
           </div>
 
@@ -53,7 +53,7 @@ export function NutritionChart({ data, details, user }) {
             <span className="carbs"></span>
             <div className="nut-text">
               <p>Carbs</p>
-              <p>{details.total_carbs}</p>
+              <p>{details.total_carbs} g</p>
             </div>
           </div>
 
@@ -61,7 +61,7 @@ export function NutritionChart({ data, details, user }) {
             <span className="fat"></span>
             <div className="nut-text">
               <p>Fat</p>
-              <p>{details.total_fat}</p>
+              <p>{details.total_fat} g</p>
             </div>
           </div>
         </div>

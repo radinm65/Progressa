@@ -1,0 +1,115 @@
+.meal-card {
+    width:100%;
+    min-height:100px;
+
+    display:flex;
+    flex-direction: row;
+    
+    align-items:center;
+
+    gap:20px;
+
+    padding:15px 20px;
+
+    background:var(--surface);
+
+    border-radius:20px;
+
+    box-shadow:var(--neo-shadow);
+
+    cursor:pointer;
+}
+
+
+.meal-image {
+
+    width:80px;
+    height:80px;
+
+    border-radius:15px;
+
+    object-fit:cover;
+
+    flex-shrink:0;
+}
+
+
+
+.meal-main {
+    width: 100%;
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    align-items: center;
+}
+
+
+
+.meal-header {
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:flex-start;
+
+}
+
+
+.meal-header h4 {
+
+    font-size:18px;
+
+    margin-bottom:5px;
+
+}
+
+
+.meal-header span {
+
+    color:var(--text-secondary);
+
+    font-size:14px;
+
+}
+
+
+
+.meal-main time {
+
+    color:var(--text-secondary);
+
+    font-size:13px;
+
+}
+
+
+
+
+
+.meal-main small {
+
+    display:block;
+
+    color:var(--text-secondary);
+
+    font-size:12px;
+
+}
+
+
+
+.meal-main strong {
+
+    font-size:14px;
+
+}
+
+
+
+.meal-arrow {
+
+    font-size:25px;
+
+    color:var(--primary);
+
+}

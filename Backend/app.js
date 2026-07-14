@@ -3,7 +3,7 @@ import "dotenv/config";
 import express from "express";
 
 import foodRoutes from "./routes/foods.js";
-// import mealRoutes from "./routes/meals.js";
+import mealRoutes from "./routes/meals.js";
 // import workoutRoutes from "./routes/workouts.js";
 // import progressRoutes from "./routes/progress.js";
 import authRoutes from "./routes/auth.js";
@@ -50,7 +50,7 @@ app.use("/users", userRoutes)
 
 app.use("/foods", foodRoutes);
 
-// app.use("/meals", mealRoutes);
+app.use("/meals", mealRoutes);
 
 // app.use("/workouts", workoutRoutes);
 

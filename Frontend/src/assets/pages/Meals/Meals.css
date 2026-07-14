@@ -1,0 +1,124 @@
+.meals-page-wrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+}
+
+.search-add-div {
+    width: 100%;
+    height: 40px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.search-add-div input {
+    width: 85%;
+    height: 100%;
+    box-shadow: var(--neo-shadow);
+    border: var(--border);
+    border-radius: 10px;
+    padding: 10px 20px;
+    outline: none;
+    font-size: 16px;
+}
+
+.search-add-div button {
+    width: 15%;
+    height: 100%;
+    border-radius: 10px;
+    outline: none;
+    border: none;
+    background-color: var(--primary);
+    font-size: 14px;
+    color: white;
+    transition: all .3s;
+}
+
+.search-add-div button:hover {
+    background-color: var(--primary-hover);
+    box-shadow: 0 0 15px 5px #45c48733;
+}
+
+.filter-div {
+    width: 100%;
+    height: 50px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 25px;
+}
+
+.filter-div p {
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.filter-div select {
+    border: var(--border);
+    outline: none;
+    padding: 10px 10px;
+    border-radius: 10px;
+}
+
+.meal-card{
+    display:flex;
+    align-items:center;
+    gap:20px;
+    padding:15px;
+    border-radius:20px;
+    background:var(--surface);
+    box-shadow:var(--neo-shadow);
+    cursor:pointer;
+}
+
+
+.meal-image{
+    width:80px;
+    height:80px;
+    border-radius:15px;
+    object-fit:cover;
+}
+
+
+.meal-content{
+    flex:1;
+}
+
+
+.meal-title{
+    display:flex;
+    justify-content:space-between;
+}
+
+
+.meal-stats{
+    display:flex;
+    gap:30px;
+    margin-top:15px;
+}
+
+
+.meal-stats p{
+    color:var(--text-secondary);
+    font-size:12px;
+}
+
+
+.meal-stats strong{
+    font-size:14px;
+}
+
+.foodlogs-wrapper{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}

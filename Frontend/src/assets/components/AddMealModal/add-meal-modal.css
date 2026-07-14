@@ -1,0 +1,128 @@
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.35);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.add-meal-modal {
+  width: 420px;
+  background: var(--surface);
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: var(--neo-shadow);
+  position: relative;
+}
+
+.close-btn {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  border: none;
+  background: transparent;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.add-meal-modal h2 {
+  margin-bottom: 25px;
+  text-align: center;
+}
+
+.food-search,
+.amount-input {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.food-search label,
+.amount-input label {
+  font-size: 14px;
+  color: var(--text-secondary);
+}
+
+.food-search input,
+.amount-input input {
+  width: 100%;
+  height: 45px;
+  border: none;
+  outline: none;
+  border-radius: 12px;
+  padding: 0 15px;
+  background: var(--surface);
+  box-shadow: inset 3px 3px 6px rgba(163,177,198,.35), inset -3px -3px 6px rgba(255,255,255,.8);
+  font-size: 15px;
+}
+
+.food-dropdown {
+  margin-top: 5px;
+  max-height: 220px;
+  overflow-y: auto;
+  border-radius: 12px;
+  background: var(--surface);
+  box-shadow: var(--neo-shadow);
+  padding: 8px;
+}
+
+.food-option {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: .2s;
+}
+
+.food-option:hover {
+  background: rgba(69,196,134,.1);
+}
+
+.food-option img {
+  width: 45px;
+  height: 45px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.food-option h4 {
+  margin: 0;
+  font-size: 14px;
+}
+
+.food-option span {
+  font-size: 12px;
+  color: var(--text-secondary);
+}
+
+.selected-food {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 15px;
+  border-radius: 12px;
+  margin-bottom: 20px;
+  background: rgba(69,196,134,.1);
+}
+
+.add-btn {
+  width: 100%;
+  height: 45px;
+  border: none;
+  border-radius: 14px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+  color: white;
+  background: var(--primary);
+  transition: .2s;
+}
+
+.add-btn:hover {
+  background: var(--primary-dark);
+}

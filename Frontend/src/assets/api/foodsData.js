@@ -1,10 +1,9 @@
 import api from './axiosInstance'
 
-export async function getNutrients(userID) {
+export async function getFoods(userID) {
 
     try {
-
-        const nutrients = await api.get(`/foods/${userID}/nutrients`)
+        const nutrients = await api.get(`/foods/${userID}`)
 
         return nutrients.data
 
@@ -12,14 +11,4 @@ export async function getNutrients(userID) {
         console.log(e);
     }
 
-}
-
-export async function getMeals(userID) {
-    try {
-        const meals = await api.get(`/foods/${userID}/meals`)
-
-        return meals.data
-    } catch (e) {
-        console.log(e);
-    }
 }

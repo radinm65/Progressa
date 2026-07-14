@@ -1,67 +1,15 @@
-import { PageHeader } from "../../components/PageHeader/PageHeader";
 import { WeightChart } from "../../components/WeightChart/WeightChart";
 import { NutritionChart } from "../../components/NutritionChart/NutritionChart";
 import { NutritionStats } from "../../components/NutritionStats/NutritionStats";
-import { getUserWeights } from "../../api/usersData";
-import { getNutrients } from "../../api/foodsData";
-import { getMeals } from "../../api/foodsData";
-import { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 import { useOutletContext } from "react-router-dom";
 import "./Dashboard.css";
 
 export function Dashboard() {
-  const { user, setPageTitle } = useOutletContext();
-  const [userweights, setUserWeights] = useState([]);
-  const [getUsersMeals, setUserMeals] = useState([]);
-  const [userNutrients, setUserNutrients] = useState({
-    total_calories: 0,
-    total_protein: 0,
-    total_carbs: 0,
-    total_fat: 0,
-  });
+  const { user, userWeights, userNutrients, userMeals} =
+    useOutletContext();
 
-  useEffect(() => {
-    async function getWeights() {
-      try {
-        const weights = await getUserWeights(user.id);
-        setUserWeights(weights);
-      } catch (e) {
-        console.log(e);
-      }
-    }
-    getWeights();
-  }, [user]);
-
-  useEffect(() => {
-    setPageTitle("Dashboard");
-  }, [setPageTitle]);
-
-  useEffect(() => {
-    async function getNutrientsData() {
-      try {
-        const nutrients = await getNutrients(user.id);
-        setUserNutrients(nutrients);
-      } catch (e) {
-        console.log(e);
-      }
-    }
-    getNutrientsData();
-  }, [user]);
-
-  useEffect(() => {
-    async function getUserMeals() {
-      try {
-        const meals = await getMeals(user.id);
-        setUserMeals(meals);
-      } catch (e) {
-        console.log(e);
-      }
-    }
-    getUserMeals();
-  }, [user]);
-
-  const weightData = userweights.map((w) => {
+  const weightData = userWeights.map((w) => {
     const date = new Date(w.created_at);
     const monthName = date.toLocaleString("en-US", {
       month: "long",
@@ -72,19 +20,19 @@ export function Dashboard() {
   const nutritionData = [
     {
       name: "Calories",
-      value: Math.round(userNutrients.total_calories / 10),
+      value: Math.round((userNutrients.total_calories || 0) / 10),
     },
     {
       name: "Protein",
-      value: userNutrients.total_protein,
+      value: userNutrients.total_protein || 0,
     },
     {
       name: "Carbs",
-      value: userNutrients.total_carbs,
+      value: userNutrients.total_carbs || 0,
     },
     {
       name: "Fat",
-      value: userNutrients.total_fat,
+      value: userNutrients.total_fat || 0,
     },
   ];
 
@@ -93,7 +41,7 @@ export function Dashboard() {
       <div className="dashboard-content">
         <NutritionStats
           userNutrients={userNutrients}
-          userweights={userweights}
+          userWeights={userWeights}
           user={user}
         />
 
@@ -107,7 +55,7 @@ export function Dashboard() {
           />
           <div className="meals-div">
             <h3>Todays Meals</h3>
-            {getUsersMeals.slice(0, 3).map((meal) => (
+            {userMeals.slice(0, 3).map((meal) => (
               <div className="meal-card" key={meal.id}>
                 <img src={`/${meal.image_url}`} alt={meal.name} />
                 <h4>{meal.name}</h4>
