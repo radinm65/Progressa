@@ -13,7 +13,7 @@
 
 
 
-.meal-modal {
+.food-modal {
 
     width: 450px;
 
@@ -71,7 +71,7 @@
 
 
 
-.meal-modal h2 {
+.food-modal h2 {
 
     margin-bottom: 5px;
 
@@ -79,7 +79,7 @@
 
 
 
-.meal-modal > p {
+.food-modal > p {
 
     color: var(--text-secondary);
 
@@ -116,7 +116,7 @@
 
 
 
-.form-group input {
+.form-group input, select{
 
     width:100%;
 
@@ -144,7 +144,7 @@
 
 /* buttons */
 
-.modal-actions {
+.buttons-wrapper {
 
     display:flex;
 
@@ -156,7 +156,7 @@
 
 
 
-.modal-actions button {
+.buttons-wrapper button {
 
     flex:1;
 
@@ -178,11 +178,8 @@
 
 
 .update-btn {
-
     background:var(--primary);
-
     color:white;
-
 }
 
 

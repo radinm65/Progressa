@@ -17,6 +17,7 @@ export function Meals() {
   const [calorieFilter, setCalorieFilter] = useState("all");
   const [showAddModal, setShowAddModal] = useState(false);
   const [foods, setFoods] = useState([]);
+  const [search, setSearch] = useState("");
 
   const { user, userNutrients, userWeights, userMeals, setUserMeals } =
     useOutletContext();
@@ -124,7 +125,9 @@ export function Meals() {
         calorieMatch = true;
     }
 
-    return dateMatch && calorieMatch;
+    const searchMatch = meal.name.toLowerCase().includes(search.toLowerCase());
+
+    return dateMatch && calorieMatch && searchMatch;
   });
 
   async function handleAddMeal(data) {
@@ -147,7 +150,7 @@ export function Meals() {
           user={user}
         />
         <div className="search-add-div">
-          <input type="text" placeholder="Search ..." />
+          <input type="text" placeholder="Search ..." onChange={(e) => setSearch(e.target.value)} />
           <button onClick={() => setShowAddModal(true)}>+Add Meal</button>
         </div>
         <div className="filter-div">

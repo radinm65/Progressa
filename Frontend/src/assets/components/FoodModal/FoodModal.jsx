@@ -1,22 +1,75 @@
 import { useEffect, useState } from "react";
 import "./food-modal.css";
 
-export function MealModal({ meal, onClose, onUpdate, onDelete }) {
-  const [formData, setFormData] = useState(null);
+export function FoodModal({
+  mode = "edit",
+  food,
+  onClose,
+  onUpdate,
+  onDelete,
+  onAdd,
+}) {
+  const [formData, setFormData] = useState({
+    name: "",
+    category: "Protein",
+    calories: "",
+    protein: "",
+    carbs: "",
+    fat: "",
+  });
 
   useEffect(() => {
-    if (meal) {
+    if (mode === "edit" && food) {
       setFormData({
-        amount: meal.amount,
-        calories: meal.calories,
-        protein: meal.protein,
-        carbs: meal.carbs,
-        fat: meal.fat,
+        name: food.name,
+        category: food.category,
+        calories: food.calories,
+        protein: food.protein,
+        carbs: food.carbs,
+        fat: food.fat,
       });
     }
-  }, [meal]);
+  }, [food, mode]);
 
-  if (!meal || !formData) return null;
+  if (mode === "edit" && !food) return null;
+
+  function handleSubmit() {
+    if (mode === "add") {
+      onAdd({
+        ...formData,
+        calories: Number(formData.calories),
+        protein: Number(formData.protein),
+        carbs: Number(formData.carbs),
+        fat: Number(formData.fat),
+      });
+
+      return;
+    }
+
+    const changed =
+      formData.name !== food.name ||
+      formData.category !== food.category ||
+      Number(formData.calories) !== Number(food.calories) ||
+      Number(formData.protein) !== Number(food.protein) ||
+      Number(formData.carbs) !== Number(food.carbs) ||
+      Number(formData.fat) !== Number(food.fat);
+
+    if (!changed) {
+      onClose();
+      return;
+    }
+
+    onUpdate({
+      id: food.id,
+      ...formData,
+      calories: Number(formData.calories),
+      protein: Number(formData.protein),
+      carbs: Number(formData.carbs),
+      fat: Number(formData.fat),
+    });
+
+    onClose();
+  }
 
   function handleChange(e) {
     const { name, value } = e.target;
@@ -27,50 +80,48 @@ export function MealModal({ meal, onClose, onUpdate, onDelete }) {
     }));
   }
 
-  function handleSubmit() {
-    const changed =
-      JSON.stringify(formData) !==
-      JSON.stringify({
-        amount: meal.amount,
-        calories: meal.calories,
-        protein: meal.protein,
-        carbs: meal.carbs,
-        fat: meal.fat,
-      });
-
-    if (!changed) {
-      onClose();
-      return;
-    }
-
-    onUpdate({
-      id: meal.id,
-      ...formData,
-    });
-  }
-
   return (
     <div className="modal-overlay">
-      <div className="meal-modal">
+      <div className="food-modal">
         <button className="close-btn" onClick={onClose}>
           ✕
         </button>
 
-        <img src={`/${meal.image_url}`} className="modal-image" />
+        <h2>{mode === "add" ? "Add New Food" : "Edit Food"}</h2>
 
-        <h2>{meal.name}</h2>
+        {mode === "edit" && (
+          <>
+            <img src={`/${food.image_url}`} className="modal-image" />
 
-        <p>{meal.category}</p>
+            <h2>{food.name}</h2>
+
+            <p>{food.category}</p>
+          </>
+        )}
 
         <div className="form-group">
           <div className="input-wrapper">
-            <label>Amount (g)</label>
+            <label>Name</label>
 
-            <input
-              name="amount"
-              value={formData.amount}
+            <input name="name" value={formData.name} onChange={handleChange} />
+          </div>
+
+          <div className="input-wrapper">
+            <label>Category</label>
+
+            <select
+              name="category"
+              value={formData.category}
               onChange={handleChange}
-            />
+            >
+              <option value="Protein">Protein</option>
+
+              <option value="Carbs">Carbs</option>
+
+              <option value="Fruits">Fruits</option>
+
+              <option value="Vegetables">Vegetables</option>
+            </select>
           </div>
 
           <div className="input-wrapper">
@@ -80,8 +131,10 @@ export function MealModal({ meal, onClose, onUpdate, onDelete }) {
               name="calories"
               value={formData.calories}
               onChange={handleChange}
+              type="number"
             />
           </div>
+
           <div className="input-wrapper">
             <label>Protein /100g</label>
 
@@ -89,30 +142,49 @@ export function MealModal({ meal, onClose, onUpdate, onDelete }) {
               name="protein"
               value={formData.protein}
               onChange={handleChange}
+              type="number"
             />
           </div>
+
           <div className="input-wrapper">
             <label>Carbs /100g</label>
+
             <input
               name="carbs"
               value={formData.carbs}
               onChange={handleChange}
+              type="number"
             />
           </div>
+
           <div className="input-wrapper">
             <label>Fat /100g</label>
-            <input name="fat" value={formData.fat} onChange={handleChange} />
+
+            <input
+              name="fat"
+              value={formData.fat}
+              onChange={handleChange}
+              type="number"
+            />
           </div>
         </div>
 
-        <div className="modal-actions">
-          <button className="update-btn" onClick={handleSubmit}>
-            Update
-          </button>
+        <div className="buttons-wrapper">
+          {mode === "edit" ? (
+            <>
+              <button className="update-btn" onClick={handleSubmit}>
+                Update
+              </button>
 
-          <button className="delete-btn" onClick={() => onDelete(meal.id)}>
-            Delete
-          </button>
+              <button className="delete-btn" onClick={() => onDelete(food.id)}>
+                Delete
+              </button>
+            </>
+          ) : (
+            <button className="update-btn" onClick={handleSubmit}>
+              Add Food
+            </button>
+          )}
         </div>
       </div>
     </div>

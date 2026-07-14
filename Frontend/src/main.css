@@ -63,6 +63,7 @@ body {
     background-color: var(--bg-primary);
 }
 
-button{
+button, select{
     cursor: pointer;
 }
+

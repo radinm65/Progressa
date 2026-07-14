@@ -33,34 +33,6 @@ router.get(`/:id/nutrients`, async (req, res) => {
 })
 
 
-router.get(`/:id/nutrients`, async (req, res) => {
-
-    try {
-        const username = req.params.username
-
-        const nutrients = await sql`SELECT 
-        ROUND(SUM(f.calories * (m.amount / 100)))::int AS total_calories,
-        ROUND(SUM(f.protein * (m.amount / 100)))::int AS total_protein,
-        ROUND(SUM(f.carbs * (m.amount / 100)))::int AS total_carbs,
-        ROUND(SUM(f.fat * (m.amount / 100)))::int AS total_fat
-        FROM meals m
-        JOIN foods f 
-        ON m.food_id = f.id
-        WHERE m.user_id = ${req.params.id}
-        AND m.created_at >= CURRENT_DATE
-        AND m.created_at < CURRENT_DATE + INTERVAL '1 day';`
-
-        if (nutrients.length === 0) {
-            return res.status(404).send("nutrients with this user weren't found")
-        }
-
-        res.status(200).send(nutrients[0])
-
-    } catch (e) {
-        console.log(e);
-    }
-})
-
 router.get('/:id', async (req, res) => {
     try {
         const meals = await sql`SELECT 
@@ -181,62 +153,6 @@ router.post("/:userID", async (req, res) => {
     }
 });
 
-
-router.put("/:userID/:mealID", async (req, res) => {
-    try {
-
-        const { amount } = req.body;
-
-
-        const result = await sql`
-      UPDATE meals
-      SET amount = ${amount}
-      WHERE id = ${req.params.mealID}
-      AND user_id = ${req.params.userID}
-      RETURNING *;
-    `;
-
-
-        if (result.length === 0) {
-            return res.status(404).json({
-                message: "Meal not found"
-            });
-        }
-
-
-        res.status(200).json(result[0]);
-
-
-    } catch (e) {
-        console.log(e);
-
-        res.status(500).json({
-            message: "Server error"
-        });
-    }
-});
-
-
-router.post("/:userID", async (req, res) => {
-    try {
-        const { food_id, amount } = req.body;
-
-
-        const result = await sql`INSERT INTO meals
-            (user_id, food_id, amount)
-
-            VALUES
-            (${req.params.userID},
-            ${food_id},
-            ${amount})
-
-            RETURNING *;`;
-
-        res.send(result[0])
-    } catch (e) {
-        console.log(e);
-    }
-})
 
 
 export default router

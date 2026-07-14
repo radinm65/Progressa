@@ -1,0 +1,47 @@
+.food-wrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.foods-container {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 30px;
+    align-items: center;
+}
+
+.food-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-start;
+    width: 200px;
+    height: 200px;
+    padding: 15px;
+    border-radius: 30px;
+    background-size: cover;
+    background-position: center;
+cursor: pointer;
+}
+
+.food-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.35);
+    border-radius: 30px;
+}
+
+.food-card p,
+h3,
+span {
+    position: relative;
+    z-index: 1;
+    color: white;
+}
