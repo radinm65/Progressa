@@ -7,7 +7,7 @@ export async function getUser(username) {
         const user = await api.get(`/users/${username}`)
 
         return user.data
-        
+
     } catch (e) {
         console.log(e);
     }
@@ -20,5 +20,39 @@ export async function getUserWeights(userID) {
         return weights.data
     } catch (e) {
         console.log(e);
+    }
+}
+
+export async function updatePassword(userID, data) {
+
+    try {
+
+        const response = await api.put(
+            `/users/${userID}/password`,
+            data
+        );
+
+        return response.data;
+
+    } catch (e) {
+        console.log(e);
+    }
+
+}
+
+
+
+export async function updateUser(userID, data) {
+    try {
+        const response = await api.put(
+            `/users/${userID}`,
+            data
+        );
+
+        return response.data;
+
+    } catch (e) {
+        console.log(e.response?.data || e.message);
+        throw e;
     }
 }

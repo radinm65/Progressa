@@ -111,10 +111,11 @@ export default function App() {
             <Outlet
               context={{
                 user,
+                setUser,
                 userWeights,
                 userNutrients,
                 userMeals,
-                  setUserMeals,
+                setUserMeals,
                 setUserWeights
               }}
             />
