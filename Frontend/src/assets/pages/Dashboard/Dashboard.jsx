@@ -45,7 +45,7 @@ export function Dashboard() {
           user={user}
         />
 
-        <WeightChart data={weightData} />
+        <WeightChart data={weightData} width={250} title={"Weight Progress"} dataKey={"weight"} />
 
         <div className="main-data">
           <NutritionChart

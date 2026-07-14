@@ -114,7 +114,8 @@ export default function App() {
                 userWeights,
                 userNutrients,
                 userMeals,
-                setUserMeals,
+                  setUserMeals,
+                setUserWeights
               }}
             />
           </>

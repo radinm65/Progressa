@@ -11,14 +11,14 @@ import {
 import "./Charts.css";
 
 
-export function WeightChart({ data }) {
+export function WeightChart({ data, width, title, dataKey }) {
 
   return (
     <div className="chart-container">
 
-      <h3>Weight Progress</h3>
+      <h3>{title }</h3>
 
-      <ResponsiveContainer width="100%" height={250}>
+      <ResponsiveContainer width="100%" height={width}>
 
         <LineChart data={data}>
 
@@ -32,7 +32,7 @@ export function WeightChart({ data }) {
 
           <Line
             type="monotone"
-            dataKey="weight"
+            dataKey={dataKey }
             stroke="#45c486"
             strokeWidth={3}
             dot={{ r: 5 }}

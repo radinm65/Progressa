@@ -1,0 +1,119 @@
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+
+  background: rgba(0,0,0,0.35);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  z-index: 1000;
+}
+
+
+.weight-modal {
+  width: 400px;
+
+  background: var(--surface);
+
+  border-radius: 20px;
+
+  padding: 30px;
+
+  box-shadow: var(--neo-shadow);
+
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+
+.close-btn {
+  position: absolute;
+
+  right: 20px;
+  top: 15px;
+
+  border: none;
+
+  background: transparent;
+
+  font-size: 22px;
+
+  cursor: pointer;
+}
+
+
+.weight-modal h2 {
+  text-align: center;
+
+  margin-top: 10px;
+
+  color: var(--text-primary);
+}
+
+
+.input-wrapper {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 8px;
+}
+
+
+.input-wrapper label {
+  color: var(--text-secondary);
+
+  font-size: 14px;
+}
+
+
+.input-wrapper input {
+
+  padding: 14px;
+
+  border-radius: 12px;
+
+  border: none;
+
+  outline: none;
+
+  background: var(--surface);
+
+  box-shadow:
+    inset 3px 3px 8px rgba(163,177,198,0.35),
+    inset -3px -3px 8px rgba(255,255,255,0.8);
+
+  font-size: 16px;
+}
+
+
+.add-weight-btn {
+
+  padding: 14px;
+
+  border: none;
+
+  border-radius: 15px;
+
+  background: var(--primary);
+
+  color: white;
+
+  cursor: pointer;
+
+  font-size: 16px;
+
+  transition: .2s;
+}
+
+
+.add-weight-btn:hover {
+
+  transform: translateY(-2px);
+
+}

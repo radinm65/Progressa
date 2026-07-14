@@ -5,7 +5,7 @@ import express from "express";
 import foodRoutes from "./routes/foods.js";
 import mealRoutes from "./routes/meals.js";
 import workoutRoutes from "./routes/workouts.js";
-// import progressRoutes from "./routes/progress.js";
+import weightsRoutes from "./routes/weights.js";
 import authRoutes from "./routes/auth.js";
 import userRoutes from "./routes/users.js";
 
@@ -54,7 +54,7 @@ app.use("/meals", mealRoutes);
 
 app.use("/workouts", workoutRoutes);
 
-// app.use("/progress", progressRoutes);
+app.use("/weights", weightsRoutes);
 
 
 // Test Route
