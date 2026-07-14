@@ -21,13 +21,13 @@
     flex-direction: column;
     justify-content: flex-end;
     align-items: flex-start;
-    width: 200px;
-    height: 200px;
+    width: 225px;
+    height: 225px;
     padding: 15px;
     border-radius: 30px;
     background-size: cover;
     background-position: center;
-cursor: pointer;
+    cursor: pointer;
 }
 
 .food-card::before {
@@ -39,8 +39,8 @@ cursor: pointer;
 }
 
 .food-card p,
-h3,
-span {
+.food-card h3,
+.food-card span {
     position: relative;
     z-index: 1;
     color: white;

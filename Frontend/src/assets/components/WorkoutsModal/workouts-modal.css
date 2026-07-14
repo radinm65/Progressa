@@ -1,0 +1,123 @@
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.35);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  z-index: 1000;
+}
+
+
+.workout-modal {
+  width: 450px;
+  padding: 30px;
+
+  background: var(--surface);
+  border-radius: 20px;
+
+  box-shadow: var(--neo-shadow);
+
+  position: relative;
+}
+
+
+.close-btn {
+  position: absolute;
+  right: 20px;
+  top: 15px;
+
+  border: none;
+  background: transparent;
+
+  font-size: 22px;
+  cursor: pointer;
+
+  color: var(--text-secondary);
+}
+
+
+.workout-modal h2 {
+  text-align: center;
+  margin-bottom: 25px;
+
+  color: var(--text-primary);
+}
+
+
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+
+.input-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+
+.input-wrapper label {
+  font-size: 14px;
+  color: var(--text-secondary);
+}
+
+
+
+.input-wrapper input,
+.input-wrapper select {
+
+  width: 100%;
+  height: 42px;
+
+  border: none;
+  outline: none;
+
+  border-radius: 12px;
+
+  padding: 0 15px;
+
+  background: var(--surface);
+
+  box-shadow:
+    inset 3px 3px 7px rgba(163,177,198,0.35),
+    inset -3px -3px 7px rgba(255,255,255,0.8);
+
+  color: var(--text-primary);
+
+  font-size: 14px;
+}
+
+
+
+.add-workout-btn {
+
+  margin-top: 25px;
+
+  width: 100%;
+  height: 45px;
+
+  border: none;
+  border-radius: 14px;
+
+  background: var(--primary);
+
+  color: white;
+
+  font-size: 16px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: 0.2s;
+}
+
+
+.add-workout-btn:hover {
+  background: var(--primary-dark);
+}

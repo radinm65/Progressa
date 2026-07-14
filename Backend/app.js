@@ -4,7 +4,7 @@ import express from "express";
 
 import foodRoutes from "./routes/foods.js";
 import mealRoutes from "./routes/meals.js";
-// import workoutRoutes from "./routes/workouts.js";
+import workoutRoutes from "./routes/workouts.js";
 // import progressRoutes from "./routes/progress.js";
 import authRoutes from "./routes/auth.js";
 import userRoutes from "./routes/users.js";
@@ -52,7 +52,7 @@ app.use("/foods", foodRoutes);
 
 app.use("/meals", mealRoutes);
 
-// app.use("/workouts", workoutRoutes);
+app.use("/workouts", workoutRoutes);
 
 // app.use("/progress", progressRoutes);
 

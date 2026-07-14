@@ -60,6 +60,7 @@
 }
 
 .filter-div select {
+    width: 200px;
     border: var(--border);
     outline: none;
     padding: 10px 10px;

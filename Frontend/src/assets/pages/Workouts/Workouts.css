@@ -1,0 +1,86 @@
+.workout-wrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 25px;
+}
+
+.workout-stats {
+    width: 100%;
+    height: 150px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+}
+
+.workout-stat-div {
+    width: 100%;
+    height: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 15px;
+    box-shadow: var(--neo-shadow);
+    border-radius: 15px;
+    padding: 20px;
+}
+
+.workout-stat-div h4 {
+    font-size: 18px;
+    font-weight: 800;
+}
+
+.workout-stat-div p {
+    font-weight: 900;
+    font-size: 26px;
+}
+
+.workout-stat-div span {
+    font-weight: 700;
+    color: var(--text-secondary);
+    font-size: 16px;
+}
+
+.workouts-container {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 30px;
+    align-items: center;
+}
+
+.workout-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-start;
+    width: 225px;
+    height: 225px;
+    padding: 15px;
+    border-radius: 30px;
+    background-size: cover;
+    background-position: center;
+    cursor: pointer;
+}
+
+.workout-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.35);
+    border-radius: 30px;
+}
+
+.workout-card p,
+.workout-card h3,
+.workout-card span {
+    position: relative;
+    z-index: 1;
+    color: white;
+}
